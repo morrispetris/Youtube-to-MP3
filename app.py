@@ -17,9 +17,21 @@ def downloadYT(link):
     with youtube_dl.YoutubeDL(information) as music:
         music.download([link])
 
-@app.route("/")
+@app.route("/", methods=['POST', 'GET'])
 def index():
-    return render_template("index.html")
+
+    if request.method == "POST":
+
+        try:
+            downloadYT(request.form['link'])
+            flash('COMPLETED!', 'done')
+        except:
+            flash('FAILED!', 'error')
+        
+        return redirect(url_for("index"))
+
+    else:
+        return render_template("index.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
