@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  margin: 0 0 20px 0;
+}
+
+body {
+  font-family: 'Acme', sans-serif;
+  text-transform: uppercase;
+  background: #303030;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+input[type="text"] {
+  width: 450px;
+  margin: 0 30px 30px 30px;
+  font-family: 'Acme', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  box-shadow: 0 5px 7px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
+  border: none;
+  padding: 20px 25px 20px 25px;
+  outline: none;
+  margin: 0;
+  color: #303030;
+  float: left;
+  border-radius: 100px;
+}
+
+div {
+  position: relative;
+}
+
+button {
+  position: absolute;
+  margin: auto;
+  top: 3.35px; right: 3px;
+  float: left;
+  width: 50px;
+  height: 50px;
+  background: white;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+i {
+  color: #303030;
+}
+
+button:hover {
+  background: white;
+  box-shadow: none;
+}
+
+::placeholder {
+  color: #303030;
+}
+
+@media screen and (max-width: 550px) {
+  input[type="text"] {
+    width: 100%;
+  }
+}
