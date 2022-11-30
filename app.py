@@ -7,7 +7,8 @@ app.secret_key = "1234abcd"
 
 def downloadYT(link):
     information = {
-        'format': 'bestaudio/best',
+         #'format': 'bestaudio/best',
+        'format': 'worst',
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
