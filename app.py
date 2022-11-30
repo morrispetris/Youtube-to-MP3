@@ -17,7 +17,7 @@ async def downloadYT(link):
         }],
     }
     with youtube_dl.YoutubeDL(information) as music:
-        music.download([link])
+        await music.download([link])
 
 @app.route("/", methods=['POST', 'GET'])
 def index():
@@ -26,7 +26,7 @@ def index():
 
         try:
             #downloadYT(request.form['link'])
-            await downloadYT(request.form['link'])
+            downloadYT(request.form['link'])
             flash('COMPLETED!', 'done')
         except:
             flash('FAILED!', 'error')
