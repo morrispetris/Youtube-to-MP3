@@ -5,7 +5,8 @@ from flask import Flask, render_template, request, url_for, redirect, flash
 app = Flask(__name__)
 app.secret_key = "1234abcd"
 
-def downloadYT(link):
+#def downloadYT(link):
+async def downloadYT(link):
     information = {
          #'format': 'bestaudio/best',
         'format': 'worst',
@@ -24,7 +25,8 @@ def index():
     if request.method == "POST":
 
         try:
-            downloadYT(request.form['link'])
+            #downloadYT(request.form['link'])
+            await downloadYT(request.form['link'])
             flash('COMPLETED!', 'done')
         except:
             flash('FAILED!', 'error')
