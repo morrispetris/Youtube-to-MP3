@@ -11,7 +11,7 @@ def downloadYT(link):
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
-            'preferredquality': '192',
+            'preferredquality': '64',
         }],
     }
     with youtube_dl.YoutubeDL(information) as music:
