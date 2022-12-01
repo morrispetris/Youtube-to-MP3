@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.secret_key = "1234abcd"
 
 #def downloadYT(link):
-def downloadYT(link):
+async def downloadYT(link):
     information = {
          #'format': 'bestaudio/best',
         'format': 'worst',
@@ -20,13 +20,13 @@ def downloadYT(link):
         music.download([link])
 
 @app.route("/", methods=['POST', 'GET'])
-async def index():
+def index():
 
     if request.method == "POST":
 
         try:
             #downloadYT(request.form['link'])
-            await downloadYT(request.form['link'])
+            downloadYT(request.form['link'])
             flash('COMPLETED!', 'done')
         except:
             flash('FAILED!', 'error')
